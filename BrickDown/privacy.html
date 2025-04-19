@@ -43,7 +43,7 @@
                 <h1>Privacy Policy</h1>
 <p>Last updated: April 19, 2025</p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
-<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
+<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
 <h2>Interpretation and Definitions</h2>
 <h3>Interpretation</h3>
 <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
@@ -190,6 +190,66 @@
     
 
 </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+    const tabLinks = Array.from(document.querySelectorAll(".tab-link"));
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabLinks.forEach(function(tabLink) {
+        tabLink.addEventListener("click", toggleTab);
+    });
+
+    let priorActiveTab = null;
+
+    function toggleTab(event) {
+        tabLinks.forEach(function(tabLink, index){
+            tabLink.classList.remove("active");
+            tabLink.classList.add("inactive");
+
+            tabContents[index].classList.remove("visible");
+            tabContents[index].classList.add("hidden");
+        });
+
+        if(priorActiveTab === this) {
+            this.classList.remove("active");
+            this.classList.add("inactive");
+
+            tabContents[tabLinks.indexOf(this)].classList.remove("visible");
+            tabContents[tabLinks.indexOf(this)].classList.add("hidden");
+
+            priorActiveTab = null;
+        } else {
+            this.classList.remove("inactive");
+            this.classList.add("active");
+
+            tabContents[tabLinks.indexOf(this)].classList.remove("hidden");
+            tabContents[tabLinks.indexOf(this)].classList.add("visible");
+
+            priorActiveTab = this;
+        }
+
+        if (priorActiveTab === null) {
+            this.classList.remove("inactive");
+            this.classList.add("active");
+
+            tabContents[tabLinks.indexOf(this)].classList.remove("hidden");
+            tabContents[tabLinks.indexOf(this)].classList.add("visible");
+        }
+
+        event.preventDefault();
+    }
+</script>
+
+<script defer data-domain="termsfeed-livelink--production" data-api="/plausible/event" src="/plausible/script.js"></script>
+
+<script type="text/javascript">
+    "use strict";
+    window.LCG_TRACKING_APPLICATION = "termsfeed-livelink";
+    window.LCG_TRACKING_ENVIRONMENT = "production";
+    window.LCG_TRACKING_EPOCH = "2020-e01";
+</script>
+
+
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"93283cdb3c945528","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.4.0-1-g37f21b1","token":"24d38a5cb57a4c87ad9f5238132ec4c3"}' crossorigin="anonymous"></script>
 </body>
