@@ -1,38 +1,36 @@
-$(document).ready(function() {
-    // Initialize EmailJS with your User ID
-    emailjs.init("shashank.malik@hotmail.com"); // Replace with your EmailJS User ID
+(function() {
+    // Initialize EmailJS with your user ID
+    emailjs.init("shashank.malik@hotmail.com");
 
-    // Handle form submission
-    $('#contact').on('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+    $(document).ready(function() {
+        // Handle form submission
+        $('#contact-form').on('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
 
-        // Collect form data
-        var formData = {
-            name: $('#name').val().trim(),
-            email: $('#email').val().trim(),
-            message: $('#message').val().trim()
-        };
+            // Collect form data
+            var formData = {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                message: $('#message').val()
+            };
 
-        // Basic validation
-        if (!formData.name || !formData.email || !formData.message) {
-            alert('Please fill out all fields.');
-            return;
-        }
+            // Disable submit button to prevent multiple submissions
+            var $submitButton = $(this).find('input[type="submit"]');
+            $submitButton.prop('disabled', true).val('Sending...');
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-
-        // Send email via EmailJS
-        emailjs.send('service_2lo7xhy', 'template_qgmgus7', formData)
-            .then(function(response) {
-                console.log('Email sent successfully:', response);
-                alert('Your message has been sent successfully!');
-                $('#contact form')[0].reset(); // Reset the form
-            }, function(error) {
-                console.error('Email sending failed:', error);
-                alert('Failed to send your message. Please try again later.');
-            });
+            // Send email using EmailJS
+            emailjs.send('service_2lo7xhy', 'template_qgmgus7', formData)
+                .then(function(response) {
+                    // Success: Show confirmation and reset form
+                    alert('Message sent successfully!');
+                    $('#contact-form')[0].reset();
+                    $submitButton.prop('disabled', false).val('Send Message');
+                }, function(error) {
+                    // Error: Show error message
+                    alert('Failed to send message. Please try again later.');
+                    console.error('EmailJS error:', error);
+                    $submitButton.prop('disabled', false).val('Send Message');
+                });
+        });
     });
-});
+})();
