@@ -25,7 +25,7 @@ $(document).ready(function() {
         }
 
         // Send email via EmailJS
-        emailjs.send('service_2lo7xhy', 'YOUR_TEMPLATE_ID', formData)
+        emailjs.send('service_2lo7xhy', 'template_qgmgus7', formData)
             .then(function(response) {
                 console.log('Email sent successfully:', response);
                 alert('Your message has been sent successfully!');
