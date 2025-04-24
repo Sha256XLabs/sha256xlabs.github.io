@@ -3,7 +3,7 @@ $(document).ready(function() {
     emailjs.init("shashank.malik@hotmail.com"); // Replace with your EmailJS User ID
 
     // Handle form submission
-    $('#contact form').on('submit', function(event) {
+    $('#contact').on('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
 
         // Collect form data
