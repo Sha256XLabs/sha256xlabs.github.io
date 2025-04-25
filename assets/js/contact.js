@@ -1,6 +1,6 @@
 (function() {
     // Initialize EmailJS with your user ID
-    emailjs.init("shashank.malik@hotmail.com");
+    emailjs.init("djjsiK6Xe6qnz88Q1");
 
     $(document).ready(function() {
         // Handle form submission
