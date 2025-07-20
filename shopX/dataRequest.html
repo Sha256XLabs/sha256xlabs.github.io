@@ -3,32 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Request Form</title>
+    <title>Account & Data Deletion Request</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             line-height: 1.6;
-            color: #24292e;
-            max-width: 600px;
+            color: #333;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+        }
+        h1, h2 {
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 10px;
+            margin-top: 24px;
         }
         h1 {
             text-align: center;
         }
+        strong {
+            font-weight: 600;
+        }
+        .app-name {
+            font-weight: bold;
+            color: #0366d6;
+        }
         form {
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
         }
         label {
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: 600;
         }
         input[type="text"],
         input[type="email"],
         textarea,
         select {
-            padding: 8px;
+            padding: 10px;
             margin-top: 5px;
             border: 1px solid #d1d5da;
             border-radius: 6px;
@@ -36,28 +54,62 @@
         }
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
         button {
             margin-top: 20px;
-            padding: 10px 16px;
+            padding: 12px 18px;
             font-size: 16px;
             color: #fff;
-            background-color: #28a745;
+            background-color: #d73a49;
             border: 1px solid rgba(27, 31, 35, 0.15);
             border-radius: 6px;
             cursor: pointer;
+            font-weight: 600;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #cb2431;
         }
     </style>
 </head>
 <body>
 
-    <h1>Data Request</h1>
-    <p>Please use the form below to recieve/delete your data. We will respond to your request as soon as possible.</p>
+    <div class="container">
+        <h1>Data Deletion Request for <span class="app-name">[Your App Name]</span></h1>
+        <p>This page is provided by the developer <strong>sha256xlabs</strong> in accordance with Google Play's data safety policies. Use the information and form below to request the deletion of your account and associated data.</p>
 
+        <h2>Steps to Request Account Deletion</h2>
+        <p>To request the deletion of your account and associated data for <span class="app-name">[Your App Name]</span>, please follow these steps:</p>
+        <ol>
+            <li>Complete the form at the bottom of this page with your accurate information.</li>
+            <li>In the "Email Address" field, you must provide the email associated with your app account to allow for verification.</li>
+            <li>In the "Type of Request" dropdown, select "Delete Data".</li>
+            <li>Submit the form. You will receive an automated confirmation that your request has been received.</li>
+            <li>Our team will process your request within [e.g., 14 days]. You will be notified by email once the deletion is complete.</li>
+        </ol>
+
+        <h2>Types of Data Deleted and Retained</h2>
+        <p>When you request the deletion of your account, we are committed to deleting the data associated with it. [5]</p>
+        
+        <h3>Data That Will Be Permanently Deleted:</h3>
+        <p>Upon a verified request, the following types of data associated with your account will be permanently and irretrievably deleted from our systems:</p>
+        <ul>
+            <li><strong>Account Information:</strong> Your username, email address, and profile information.</li>
+            <li><strong>User-Generated Content:</strong> Any data you created or uploaded, such as [e.g., posts, images, comments, activity history]. <em>(Customize this list based on your app's functionality).</em></li>
+            <li><strong>App Usage Data:</strong> Analytics data tied directly to your user identity, such as session history and preferences.</li>
+        </ul>
+
+        <h3>Data That May Be Retained</h3>
+        <p>For legitimate reasons, such as security, fraud prevention, or regulatory compliance, we may need to retain certain data for a limited period. [1, 7] This data is not tied to your personally identifiable account after your deletion request is processed. We may retain:</p>
+        <ul>
+            <li><strong>Transaction Records:</strong> If you made any purchases, we may retain a record of those transactions for financial auditing and compliance for a period of [e.g., 7 years].</li>
+            <li><strong>Anonymized Usage Data:</strong> Aggregated and fully anonymized data that cannot be traced back to any individual, used for statistical analysis and service improvement.</li>
+        </ul>
+
+        <h2>Data Deletion Request Form</h2>
+        <p>Please fill out this form to submit your request. This process allows us to verify and process your request securely, even if you have uninstalled the app. [7, 8]</p>
+        
+        <!-- Replace with your Formspree endpoint -->
     <form action="https://formspree.io/f/xkgzoryn" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Michael" required>
