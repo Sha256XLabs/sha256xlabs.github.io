@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Request Form</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            color: #24292e;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #d1d5da;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 16px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: 1px solid rgba(27, 31, 35, 0.15);
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Data Request</h1>
+    <p>Please use the form below to submit your data requests. We will respond to your request as soon as possible.</p>
+
+    <form action="https://formspree.io/f/your_form_id" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="request-type">Type of Request:</label>
+        <select id="request-type" name="request_type" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Delete Data">Delete Data</option>
+            <option value="Request Data">Request Data</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
